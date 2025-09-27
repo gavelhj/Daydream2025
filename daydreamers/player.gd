@@ -15,6 +15,13 @@ var alpha = 0
 var cycle = 0.25
 var cycledirection = 1 #make it rotate the other way
 
+func eject_apple():
+	var apple = Scene.summon("res://Apple.tscn")
+	var main = get_tree().get_root().get_node("World")
+	apple.position = position
+	apple.rotation = 0
+	main.add_child.call_deferred(apple)
+
 func animate(direction, delta):
 
 	if velocity.y:
@@ -59,7 +66,7 @@ func handle_inputs(delta):
 			if 'apple' in Inventory.items:
 				velocity.y -= jumpheight * 3
 				Inventory.items.erase('apple')
-				#shoot an orange down from sprite
+				eject_apple()
 	return direction #direction u moving in
 
 func _physics_process(delta: float) -> void:

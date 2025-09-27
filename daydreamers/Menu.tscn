@@ -1,35 +1,51 @@
-[gd_scene load_steps=3 format=3 uid="uid://xshtpqckuidd"]
+[gd_scene load_steps=5 format=3 uid="uid://xshtpqckuidd"]
 
 [ext_resource type="Texture2D" uid="uid://bi0f7d186sd72" path="res://volume-icon.png" id="1_5yleq"]
+[ext_resource type="Script" uid="uid://dqwj2cssi5fyh" path="res://menu.gd" id="1_cx167"]
+[ext_resource type="Texture2D" uid="uid://nu3lpi3u0186" path="res://music-icon.png" id="2_dolsu"]
 [ext_resource type="Texture2D" uid="uid://ygw30aixe6fa" path="res://cancel-icon.png" id="2_ylpcl"]
 
 [node name="Control" type="CanvasLayer"]
+script = ExtResource("1_cx167")
 
 [node name="blackbackground" type="ColorRect" parent="."]
 offset_right = 660.0
 offset_bottom = 374.0
 color = Color(0, 0, 0, 0.39215687)
 
-[node name="Sound" type="Button" parent="."]
-offset_left = 88.0
-offset_top = 290.0
-offset_right = 250.0
-offset_bottom = 452.0
-text = "
-S"
-
 [node name="Music" type="Button" parent="."]
-offset_left = 18.0
-offset_top = 290.0
-offset_right = 538.0
-offset_bottom = 810.0
+offset_left = -138.0
+offset_top = 56.0
+offset_right = 382.0
+offset_bottom = 576.0
 scale = Vector2(0.1, 0.1)
+pivot_offset = Vector2(260, 260)
+icon = ExtResource("2_dolsu")
+
+[node name="Sound" type="Button" parent="."]
+offset_left = -210.0
+offset_top = 56.0
+offset_right = 310.0
+offset_bottom = 576.0
+scale = Vector2(0.1, 0.1)
+pivot_offset = Vector2(260, 260)
 icon = ExtResource("1_5yleq")
 
 [node name="Menu" type="Button" parent="."]
-offset_left = 570.0
-offset_top = 290.0
-offset_right = 1090.0
-offset_bottom = 810.0
+offset_left = 336.0
+offset_top = 56.0
+offset_right = 856.0
+offset_bottom = 576.0
 scale = Vector2(0.1, 0.1)
+pivot_offset = Vector2(260, 260)
 icon = ExtResource("2_ylpcl")
+
+[connection signal="mouse_entered" from="Music" to="." method="_on_music_mouse_entered"]
+[connection signal="mouse_exited" from="Music" to="." method="_on_music_mouse_exited"]
+[connection signal="pressed" from="Music" to="." method="_on_music_pressed"]
+[connection signal="mouse_entered" from="Sound" to="." method="_on_sound_mouse_entered"]
+[connection signal="mouse_exited" from="Sound" to="." method="_on_sound_mouse_exited"]
+[connection signal="pressed" from="Sound" to="." method="_on_sound_pressed"]
+[connection signal="mouse_entered" from="Menu" to="." method="_on_menu_mouse_entered"]
+[connection signal="mouse_exited" from="Menu" to="." method="_on_menu_mouse_exited"]
+[connection signal="pressed" from="Menu" to="." method="_on_menu_pressed"]

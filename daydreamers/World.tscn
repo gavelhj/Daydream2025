@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://b08vl5n2lur0p"]
+[gd_scene load_steps=10 format=4 uid="uid://b08vl5n2lur0p"]
 
 [ext_resource type="PackedScene" uid="uid://bxas3bbhhmtut" path="res://Player.tscn" id="1_c6gwx"]
 [ext_resource type="Script" uid="uid://cf2xv7ebpb05h" path="res://world.gd" id="1_p1v5b"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://1gakrrngbltg" path="res://Inventory.tscn" id="4_p1v5b"]
 [ext_resource type="Script" uid="uid://683s6x7ysu0j" path="res://HUD.gd" id="4_wygdx"]
 [ext_resource type="PackedScene" uid="uid://davv6ke1mw3li" path="res://Quota.tscn" id="5_wygdx"]
-[ext_resource type="Texture2D" uid="uid://buvghihjm7tpd" path="res://apple.png" id="8_bah7m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2dftf"]
 texture = ExtResource("2_2dftf")
@@ -44,8 +43,3 @@ visible = false
 
 [node name="Quota" parent="HUD" instance=ExtResource("5_wygdx")]
 visible = false
-
-[node name="Apple" type="Sprite2D" parent="HUD"]
-position = Vector2(64.999985, -10.999985)
-scale = Vector2(0.04, 0.04)
-texture = ExtResource("8_bah7m")

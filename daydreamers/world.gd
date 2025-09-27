@@ -12,11 +12,10 @@ extends Node2D
 func lerp_camera(start, end, delta=1):
 	camera.offset.x = lerp(start.x, end.x, delta)
 	camera.offset.y = lerp(start.y, end.y, delta)
-	print(camera.offset)
 
 func _process(delta):
-	camlerpend = Vector2(clamp(player.position.x, levelstart, levelend), 0)
-	lerp_camera(camera.offset, camlerpend, delta * 5)
+	#camlerpend = Vector2(clamp(player.position.x, levelstart, levelend), 0)
+	lerp_camera(camera.offset, player.position, delta * 5)
 	
 
 var values = {
@@ -27,8 +26,9 @@ var values = {
 	apple = 100
 }
 func sell_items():
-	for item in Inventory.items:
-		pass
+	for price in Inventory.items:
+		Global.money += price
+	Inventory.items.clear()
 
 func _ready():
 	print("works")

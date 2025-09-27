@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://davv6ke1mw3li"]
+[gd_scene load_steps=2 format=3 uid="uid://davv6ke1mw3li"]
+
+[ext_resource type="Texture2D" uid="uid://cmqfibooapand" path="res://clipboard-sprite.png" id="1_qjgnv"]
 
 [node name="Quota" type="CanvasLayer"]
 
@@ -6,3 +8,12 @@
 offset_right = 660.0
 offset_bottom = 374.0
 color = Color(0, 0, 0, 0.39215687)
+
+[node name="TextureRect" type="TextureRect" parent="blackbackground"]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 10.0
+offset_right = 704.0
+offset_bottom = 688.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_qjgnv")
