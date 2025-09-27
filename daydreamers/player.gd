@@ -16,7 +16,7 @@ var cycle = 0.25
 var cycledirection = 1 #make it rotate the other way
 
 func animate(direction, delta):
-	print(sprite.offset)
+
 	if velocity.y:
 		sprite.rotation = lerp(sprite.rotation, velocity.x * 0.005, delta)
 	else:

@@ -19,5 +19,3 @@ texture = ExtResource("2_kpjcp")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.25, 0.25)
 shape = SubResource("RectangleShape2D_kne1u")
-
-[node name="Camera2D" type="Camera2D" parent="."]
