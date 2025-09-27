@@ -15,12 +15,12 @@ var alpha = 0
 var cycle = 0.25
 var cycledirection = 1 #make it rotate the other way
 
-func animate(delta):
+func animate(direction, delta):
 	if velocity.y:
 		sprite.rotation = lerp(sprite.rotation, velocity.x * 0.005, delta)
 	else:
-		if velocity.x:
-			alpha = alpha + delta * cycledirection # so like basically alpha is
+		if direction:
+			alpha = alpha + delta * cycledirection * -direction # so like basically alpha is
 			#the time that has passed for the animation
 			
 			sprite.rotation = fmod(alpha, cycle) * 4
@@ -28,14 +28,15 @@ func animate(delta):
 			if absf(alpha) > cycle - 0.2: #go other way
 				cycledirection = -cycledirection #turn other way
 		else: #continue until alpha zero like the chess engine
-			if not absf(alpha) <= 0.07:
+			if not absf(alpha) <= 0.04:
 				alpha = alpha + delta * cycledirection
 				sprite.rotation = fmod(alpha, cycle) * 3
 			else:
 				alpha = 0
 				sprite.rotation = 0
-		sprite.offset.y = -alpha*100 * cycledirection # make the guy hop
-
+		#sprite.offset.y = -alpha*100 * cycledirection # make the guy hop
+		sprite.offset.y = -alpha*10000 * alpha
+		
 func apply_friction(direction, delta):
 	if not direction:
 		velocity.x = lerp(velocity.x, 0.0, friction * delta)
@@ -56,7 +57,7 @@ func handle_inputs(delta):
 func _physics_process(delta: float) -> void:
 	var direction = handle_inputs(delta)
 	apply_friction(direction, delta)
-	animate(delta)
+	animate(direction, delta)
 	
 	if not is_on_floor():
 		coyote += 1
