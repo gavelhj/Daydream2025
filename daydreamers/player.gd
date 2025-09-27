@@ -54,6 +54,12 @@ func handle_inputs(delta):
 	if coyote <= maxcoyote: #see if they are on the floor
 		if Input.is_action_pressed("ui_accept"):
 			velocity.y -= jumpheight #jump up
+	else:
+		if Input.is_action_just_pressed("ui_accept"):
+			if 'apple' in Inventory.items:
+				velocity.y -= jumpheight * 3
+				Inventory.items.erase('apple')
+				#shoot an orange down from sprite
 	return direction #direction u moving in
 
 func _physics_process(delta: float) -> void:

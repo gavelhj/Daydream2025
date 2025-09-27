@@ -19,5 +19,16 @@ func _process(delta):
 	lerp_camera(camera.offset, camlerpend, delta * 5)
 	
 
+var values = {
+	rocket = 200,
+	plank = 150,
+	box = 100,
+	spring = 150,
+	apple = 100
+}
+func sell_items():
+	for item in Inventory.items:
+		pass
+
 func _ready():
 	print("works")

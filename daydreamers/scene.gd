@@ -8,3 +8,8 @@ func hideoverlay(node: CanvasLayer):
 
 func changeTo(path):
 	get_tree().change_scene_to_file(path)
+
+func summon(scenename, projectilescenename):
+	var main = get_tree().get_root().get_node(scenename)
+	var projectile = load(projectilescenename)
+	return projectile
