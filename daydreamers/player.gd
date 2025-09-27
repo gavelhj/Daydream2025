@@ -16,6 +16,7 @@ var cycle = 0.25
 var cycledirection = 1 #make it rotate the other way
 
 func animate(direction, delta):
+	print(sprite.offset)
 	if velocity.y:
 		sprite.rotation = lerp(sprite.rotation, velocity.x * 0.005, delta)
 	else:
@@ -28,12 +29,13 @@ func animate(direction, delta):
 			if absf(alpha) > cycle - 0.2: #go other way
 				cycledirection = -cycledirection #turn other way
 		else: #continue until alpha zero like the chess engine
-			if not absf(alpha) <= 0.04:
+			if not absf(alpha) <= 0.1:
 				alpha = alpha + delta * cycledirection
 				sprite.rotation = fmod(alpha, cycle) * 3
 			else:
 				alpha = 0
 				sprite.rotation = 0
+				cycledirection = 1
 		#sprite.offset.y = -alpha*100 * cycledirection # make the guy hop
 		sprite.offset.y = -alpha*10000 * alpha
 		
