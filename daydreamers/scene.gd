@@ -10,5 +10,5 @@ func changeTo(path):
 	get_tree().change_scene_to_file(path)
 
 func summon(projectilescenename):
-	var projectile = load(projectilescenename)
+	var projectile = load(projectilescenename).instantiate()
 	return projectile

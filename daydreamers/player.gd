@@ -18,9 +18,9 @@ var cycledirection = 1 #make it rotate the other way
 func eject_apple():
 	var apple = Scene.summon("res://Apple.tscn")
 	var main = get_tree().get_root().get_node("World")
-	apple.position = Vector2.ZERO
+	apple.position = position
 	apple.rotation = 0
-	add_child.call_deferred(apple)
+	main.add_child.call_deferred(apple)
 
 func animate(direction, delta):
 
@@ -64,7 +64,7 @@ func handle_inputs(delta):
 	else:
 		if Input.is_action_just_pressed("ui_accept"):
 			if 'apple' in Inventory.items:
-				velocity.y -= jumpheight * 3
+				velocity.y = -jumpheight * 4
 				Inventory.items.erase('apple')
 				eject_apple()
 	return direction #direction u moving in
