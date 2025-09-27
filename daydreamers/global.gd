@@ -1,6 +1,6 @@
 extends Node
 
-var gravity = 900
+var gravity = 1000
 
 var sound = true
 var music = true
