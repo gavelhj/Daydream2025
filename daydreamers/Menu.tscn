@@ -16,7 +16,7 @@ offset_top = 18.0
 offset_right = 1016.0
 offset_bottom = 232.0
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="blackbackground" type="ColorRect" parent="."]
 offset_right = 660.0
 offset_bottom = 374.0
 color = Color(0, 0, 0, 0.39215687)

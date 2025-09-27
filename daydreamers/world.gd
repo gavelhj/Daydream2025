@@ -17,3 +17,7 @@ func lerp_camera(start, end, delta=1):
 func _process(delta):
 	camlerpend = Vector2(clamp(player.position.x, levelstart, levelend), 0)
 	lerp_camera(camera.offset, camlerpend, delta * 5)
+	
+
+func _ready():
+	print("works")

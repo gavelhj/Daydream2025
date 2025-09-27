@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=4 uid="uid://b08vl5n2lur0p"]
+[gd_scene load_steps=10 format=4 uid="uid://b08vl5n2lur0p"]
 
 [ext_resource type="PackedScene" uid="uid://bxas3bbhhmtut" path="res://Player.tscn" id="1_c6gwx"]
 [ext_resource type="Script" path="res://world.gd" id="1_p1v5b"]
 [ext_resource type="Texture2D" uid="uid://bow3joro1utdl" path="res://icon.svg" id="2_2dftf"]
 [ext_resource type="PackedScene" uid="uid://xshtpqckuidd" path="res://Menu.tscn" id="3_eu7l1"]
 [ext_resource type="PackedScene" uid="uid://1gakrrngbltg" path="res://Inventory.tscn" id="4_p1v5b"]
+[ext_resource type="Script" uid="uid://683s6x7ysu0j" path="res://HUD.gd" id="4_wygdx"]
 [ext_resource type="PackedScene" uid="uid://davv6ke1mw3li" path="res://Quota.tscn" id="5_wygdx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2dftf"]
@@ -32,8 +33,9 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("4_wygdx")
 
-[node name="Control" parent="HUD" instance=ExtResource("3_eu7l1")]
+[node name="Menu" parent="HUD" instance=ExtResource("3_eu7l1")]
 visible = false
 
 [node name="Inventory" parent="HUD" instance=ExtResource("4_p1v5b")]
