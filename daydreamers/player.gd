@@ -18,9 +18,9 @@ var cycledirection = 1 #make it rotate the other way
 func eject_apple():
 	var apple = Scene.summon("res://Apple.tscn")
 	var main = get_tree().get_root().get_node("World")
-	apple.position = position
+	apple.position = Vector2.ZERO
 	apple.rotation = 0
-	main.add_child.call_deferred(apple)
+	add_child.call_deferred(apple)
 
 func animate(direction, delta):
 

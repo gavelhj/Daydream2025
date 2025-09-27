@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Global="*res://global.gd"
 Scene="*res://scene.gd"
 Inventory="*res://inventory.gd"
+Game="*res://game.gd"
 
 [display]
 

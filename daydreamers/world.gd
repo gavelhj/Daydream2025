@@ -31,4 +31,5 @@ func sell_items():
 	Inventory.items.clear()
 
 func _ready():
-	print("works")
+	pass
+	#Scene.changeTo("res://GameStart.tscn")
