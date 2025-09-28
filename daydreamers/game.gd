@@ -8,7 +8,9 @@ extends Node
 
 func sell_items():
 	for item in Inventory.items:
-		Global.money += Inventory.itemprices[item]
+		print(item)
+		print(Inventory.itemprices[item])
+		balance += Inventory.itemprices[item]
 	Inventory.items.clear()
 
 func night_check():
@@ -24,6 +26,7 @@ func end_level(success):
 	if balance >= quota:
 			Scene.changeTo("res://WeekStart.tscn")
 			week += 1
+			daysleft = 5
 			balance = 0
 			quota =  700 + 200 * week
 	if daysleft <= 0:

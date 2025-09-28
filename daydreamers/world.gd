@@ -18,7 +18,6 @@ func _process(delta):
 	lerp_camera(camera.offset, player.position, delta * 5)
 	load_items()
 	update_items()
-	
 
 var values = {
 	rocket = 200,
@@ -29,6 +28,7 @@ var values = {
 }
 
 func _enter_tree() -> void:
+	$build2.position = Vector2(437, 295) + Vector2(50 * Game.week, 0)
 	load_items()
 	player = $Player
 	camera = $Camera2D
@@ -57,21 +57,20 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 var theguioffset = 0
 
 func load_items():
-	for item in $HUD/Inventory/HScrollBar.get_children():
+	for item in $Inventory.get_children():
 		item.queue_free()
 	var index = 0
 	for item in Inventory.items:
 		index += 1
 		var newitem = get_node(str(item)).duplicate()
-		var main = get_tree().get_root().get_node("World")
 		newitem.rotation = 0
 		newitem.position = Vector2(30 + index * 60, 41)
 		$Inventory.add_child.call_deferred(newitem)
 
 func update_items():
-	theguioffset = $HUD/Inventory/HScrollBar.value * 10
-	
+	theguioffset = $HUD/Inventory/HScrollBar.value * 3
+	$Inventory.position = camera.offset + Vector2(-350, 100)
 	var index = 0
 	for item in $Inventory.get_children():
 		index += 1
-		item.position = player.position + Vector2(30 + index * 60, 41)
+		item.position = camera.offset + Vector2(-300 + index * 60 + theguioffset, 151)

@@ -14,7 +14,7 @@ func _enter_tree() -> void:
 
 func _on_shiftbutton_pressed() -> void:
 	Scene.changeTo("res://World.tscn")
-	Inventory.get_items(2 + Game.week)
+	Inventory.get_items(3 + Game.week * 2)
 	Game.quota = 700 + 200 * Game.week
 
 
