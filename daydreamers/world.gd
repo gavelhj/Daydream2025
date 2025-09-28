@@ -25,11 +25,13 @@ var values = {
 	spring = 150,
 	apple = 100
 }
-func sell_items():
-	for price in Inventory.items:
-		Global.money += price
-	Inventory.items.clear()
 
 func _ready():
+	Scene.changeTo("res://WeekStart.tscn")
 	pass
-	#Scene.changeTo("res://GameStart.tscn")
+
+func start_day():
+	player.position = Vector2.ZERO
+
+func _enter_tree() -> void:
+	pass

@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8lvqax5gk5bt"]
+
+[ext_resource type="Script" uid="uid://dw0mx0jal8e3x" path="res://building_2.gd" id="1_d2lkj"]
+[ext_resource type="Texture2D" uid="uid://5j1gqwuvw0ma" path="res://building_2-tall.png" id="1_hag65"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hag65"]
+size = Vector2(206, 72)
+
+[node name="build2" type="StaticBody2D"]
+script = ExtResource("1_d2lkj")
+
+[node name="Building2Tall" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_hag65")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-95, 286, -94, -269, -95, -270, -96, -274, -98, -274, -94, -286, 94, -286, 98, -275, 95, -271, 93, 286)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -303)
+shape = SubResource("RectangleShape2D_hag65")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

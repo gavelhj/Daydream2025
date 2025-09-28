@@ -4,6 +4,6 @@
 [ext_resource type="Script" uid="uid://cr64kv7ysnw86" path="res://apple.gd" id="2_37lne"]
 
 [node name="Apple" type="Sprite2D"]
-scale = Vector2(0.015, 0.015)
+scale = Vector2(0.03, 0.03)
 texture = ExtResource("1_t6odu")
 script = ExtResource("2_37lne")
