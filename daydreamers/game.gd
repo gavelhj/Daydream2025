@@ -8,8 +8,7 @@ extends Node
 
 func sell_items():
 	for item in Inventory.items:
-		#Global.money += price
-		pass
+		Global.money += Inventory.itemprices[item]
 	Inventory.items.clear()
 
 func night_check():

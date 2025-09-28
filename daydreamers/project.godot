@@ -21,6 +21,7 @@ Global="*res://global.gd"
 Scene="*res://scene.gd"
 Inventory="*res://inventory.gd"
 Game="*res://game.gd"
+Items="*res://shop.tscn"
 
 [display]
 

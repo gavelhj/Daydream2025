@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://ccmm1clvcvrmv"]
+
+[ext_resource type="Texture2D" uid="uid://o26lcopfovsk" path="res://smallewr_box.webp" id="1_6lah5"]
+[ext_resource type="Texture2D" uid="uid://cfe4axj50na7v" path="res://trampoline.webp" id="2_gmb2m"]
+[ext_resource type="Texture2D" uid="uid://beubmsnl40bk7" path="res://rocket.webp" id="3_8kdgp"]
+[ext_resource type="Texture2D" uid="uid://b8lpefpk78xij" path="res://plank.webp" id="4_myf4l"]
+[ext_resource type="Texture2D" uid="uid://buvghihjm7tpd" path="res://apple.png" id="5_p5a0g"]
+
+[node name="shop" type="Node2D"]
+position = Vector2(-1665, -1714)
+
+[node name="SmallerBox" type="Sprite2D" parent="."]
+position = Vector2(318.5, 148)
+texture = ExtResource("1_6lah5")
+
+[node name="Trampoline" type="Sprite2D" parent="."]
+position = Vector2(194, 149.99997)
+scale = Vector2(0.2951583, 0.42682928)
+texture = ExtResource("2_gmb2m")
+
+[node name="Rocket" type="Sprite2D" parent="."]
+position = Vector2(15, 247)
+texture = ExtResource("3_8kdgp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(315, 212)
+texture = ExtResource("4_myf4l")
+
+[node name="Apple" type="Sprite2D" parent="."]
+position = Vector2(24, 151)
+texture = ExtResource("5_p5a0g")

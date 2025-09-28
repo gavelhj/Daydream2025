@@ -1,18 +1,44 @@
-[gd_scene load_steps=2 format=3 uid="uid://1gakrrngbltg"]
+[gd_scene load_steps=7 format=3 uid="uid://1gakrrngbltg"]
 
 [ext_resource type="Script" uid="uid://d1ge5uc7w0ixv" path="res://inventory.gd" id="1_3n7vm"]
+[ext_resource type="Texture2D" uid="uid://o26lcopfovsk" path="res://smallewr_box.webp" id="3_3xuxb"]
+[ext_resource type="Texture2D" uid="uid://cfe4axj50na7v" path="res://trampoline.webp" id="4_arhjh"]
+[ext_resource type="Texture2D" uid="uid://beubmsnl40bk7" path="res://rocket.webp" id="5_0261c"]
+[ext_resource type="Texture2D" uid="uid://b8lpefpk78xij" path="res://plank.webp" id="6_0261c"]
+[ext_resource type="Texture2D" uid="uid://buvghihjm7tpd" path="res://apple.png" id="7_e3raj"]
 
 [node name="Inventory" type="CanvasLayer"]
 script = ExtResource("1_3n7vm")
 
-[node name="VScrollBar" type="VScrollBar" parent="."]
+[node name="HScrollBar" type="HScrollBar" parent="."]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -321.5
-offset_top = -71.0
-offset_right = 321.5
+offset_left = -320.0
+offset_top = -80.0
+offset_right = 320.0
 grow_horizontal = 2
 grow_vertical = 0
+
+[node name="SmallerBox" type="Sprite2D" parent="HScrollBar"]
+position = Vector2(318.5, 148)
+texture = ExtResource("3_3xuxb")
+
+[node name="Trampoline" type="Sprite2D" parent="HScrollBar"]
+position = Vector2(194, 149.99997)
+scale = Vector2(0.2951583, 0.42682928)
+texture = ExtResource("4_arhjh")
+
+[node name="Rocket" type="Sprite2D" parent="HScrollBar"]
+position = Vector2(15, 247)
+texture = ExtResource("5_0261c")
+
+[node name="Sprite2D" type="Sprite2D" parent="HScrollBar"]
+position = Vector2(315, 212)
+texture = ExtResource("6_0261c")
+
+[node name="Apple" type="Sprite2D" parent="HScrollBar"]
+position = Vector2(477, 347)
+texture = ExtResource("7_e3raj")
