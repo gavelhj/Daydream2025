@@ -4,6 +4,7 @@ extends Node
 @onready var quota = 700
 @onready var daysleft = 5
 @onready var night = false
+@onready var week = 1
 
 func sell_items():
 	for item in Inventory.items:
@@ -29,23 +30,16 @@ func night_check():
 		%Opera/realmoon.visible = false
 		return false
 
-func begin_level(time): #day or night
-	Scene.changeTo("res://World.tscn")
-	var player = load("res://Player.tscn")
-	player.instantiate()
-	player.position = Vector2.ZERO
-
 func end_level():
 	sell_items()
+	daysleft -= 1
 	night = night_check()
-	if daysleft == 0:
-		if night:
+	if balance >= quota:
 			Scene.changeTo("res://WeekStart.tscn")
-		else:
-			if balance >= quota:
-				Scene.changeTo("res://WeekStart.tscn")
-			else:
-				Scene.changeTo("res://lose.tscn")
+			week += 1
+	if daysleft == 0:
+		if balance < quota:
+			Scene.changeTo("res://lose.tscn")
 
 func game_loop_start():
 	pass

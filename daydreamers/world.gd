@@ -27,6 +27,8 @@ var values = {
 }
 
 func _enter_tree() -> void:
+	player = $Player
+	camera = $Camera2D
 	player.position = Vector2.ZERO
 
 
