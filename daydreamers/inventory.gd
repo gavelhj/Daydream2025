@@ -13,6 +13,9 @@ func get_items(amount):
 		var randnum = randi_range(0, 4)
 		items.append(itempool[randnum])
 
+func update_items():
+	pass
+
 func _process(delta: float) -> void: #update inventory HUD
 	for item in items:
 		pass
