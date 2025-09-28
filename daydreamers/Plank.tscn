@@ -1,11 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://brp5gaphe6lkq"]
+[gd_scene load_steps=5 format=3 uid="uid://brp5gaphe6lkq"]
 
+[ext_resource type="Script" uid="uid://bc1fylxew6pyi" path="res://plank.gd" id="1_n00cy"]
 [ext_resource type="Texture2D" uid="uid://b8lpefpk78xij" path="res://plank.webp" id="1_pkcor"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n00cy"]
 size = Vector2(46, 6)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pkcor"]
+
 [node name="plank" type="StaticBody2D"]
+script = ExtResource("1_n00cy")
+metadata/_edit_group_ = true
 
 [node name="plank" type="Sprite2D" parent="."]
 scale = Vector2(0.09, 0.3)
@@ -13,3 +18,11 @@ texture = ExtResource("1_pkcor")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_n00cy")
+
+[node name="area" type="Area2D" parent="."]
+
+[node name="clickbox" type="CollisionShape2D" parent="area"]
+shape = SubResource("RectangleShape2D_pkcor")
+
+[connection signal="mouse_entered" from="area" to="." method="_on_area_mouse_entered"]
+[connection signal="mouse_exited" from="area" to="." method="_on_area_mouse_exited"]

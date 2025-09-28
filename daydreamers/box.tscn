@@ -1,11 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://dgmfy15ngcf3v"]
+[gd_scene load_steps=5 format=3 uid="uid://dgmfy15ngcf3v"]
 
 [ext_resource type="Texture2D" uid="uid://o26lcopfovsk" path="res://smallewr_box.webp" id="1_g2tbl"]
+[ext_resource type="Script" uid="uid://cmekwbuwef0xf" path="res://box.gd" id="1_oq5cr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n00cy"]
 size = Vector2(30, 22)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bqn3j"]
+
 [node name="box" type="StaticBody2D"]
+script = ExtResource("1_oq5cr")
+metadata/_edit_group_ = true
 
 [node name="box" type="Sprite2D" parent="."]
 scale = Vector2(0.3, 0.3)
@@ -13,3 +18,8 @@ texture = ExtResource("1_g2tbl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_n00cy")
+
+[node name="area" type="Area2D" parent="."]
+
+[node name="clickbox" type="CollisionShape2D" parent="area"]
+shape = SubResource("RectangleShape2D_bqn3j")

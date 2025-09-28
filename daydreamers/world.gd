@@ -66,8 +66,12 @@ func load_items():
 		var main = get_tree().get_root().get_node("World")
 		newitem.rotation = 0
 		newitem.position = Vector2(30 + index * 60, 41)
-		$HUD/Inventory/HScrollBar.add_child.call_deferred(newitem)
+		$Inventory.add_child.call_deferred(newitem)
 
 func update_items():
 	theguioffset = $HUD/Inventory/HScrollBar.value * 10
-	$HUD/Inventory/HScrollBar.position = Vector2(-theguioffset, 280)
+	
+	var index = 0
+	for item in $Inventory.get_children():
+		index += 1
+		item.position = player.position + Vector2(30 + index * 60, 41)

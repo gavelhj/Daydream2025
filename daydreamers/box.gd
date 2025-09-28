@@ -1,10 +1,5 @@
 extends StaticBody2D
 
-
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body == %Player:
-		body.velocity.y = -650
-
 var isdraggable = true
 var dragging = false
 var candrag = false
@@ -26,6 +21,7 @@ func _process(delta:float)->void:
 
 func _on_area_mouse_entered() -> void:
 	candrag = true
+	print("aa")
 
 func _on_area_mouse_exited() -> void:
 	candrag = false
