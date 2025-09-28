@@ -30,8 +30,22 @@ func _enter_tree() -> void:
 	player = $Player
 	camera = $Camera2D
 	player.position = Vector2.ZERO
+	if Game.night_check():
+		$bg/City/realdaycity.visible = false
+		$bg/City/realnightcity.visible = true
+		$bg/Opera/realopera.visible = false
+		$bg/Opera/realnightopera.visible = true
+		$bg/Sky/realsun.visible = false
+		$bg/Sky/realmoon.visible = true
+	else:
+		$bg/City/realdaycity.visible = false
+		$bg/City/realnightcity.visible = true
+		$bg/Opera/realopera.visible = false
+		$bg/Opera/realnightopera.visible = true
+		$bg/Sky/realsun.visible = false
+		$bg/Sky/realmoon.visible = true
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body == %Player:
-		Scene.changeTo("res://Lose.tscn")
+		Game.end_level(false)

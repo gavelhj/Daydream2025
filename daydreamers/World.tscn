@@ -42,52 +42,55 @@ visible = false
 [node name="Quota" parent="HUD" instance=ExtResource("5_wygdx")]
 visible = false
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+[node name="bg" type="ParallaxBackground" parent="."]
 
-[node name="City" type="ParallaxLayer" parent="ParallaxBackground"]
-unique_name_in_owner = true
+[node name="City" type="ParallaxLayer" parent="bg"]
 position = Vector2(0, 10)
 scale = Vector2(2, 2)
 motion_scale = Vector2(0.05, 0.01)
 
-[node name="realdaycity" type="Sprite2D" parent="ParallaxBackground/City"]
+[node name="realdaycity" type="Sprite2D" parent="bg/City"]
+unique_name_in_owner = true
 position = Vector2(92, 33)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("8_fvag4")
 
-[node name="realnightcity" type="Sprite2D" parent="ParallaxBackground/City"]
+[node name="realnightcity" type="Sprite2D" parent="bg/City"]
+unique_name_in_owner = true
 visible = false
 position = Vector2(92, 33)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("8_ee7l0")
 
-[node name="Opera" type="ParallaxLayer" parent="ParallaxBackground"]
-unique_name_in_owner = true
+[node name="Opera" type="ParallaxLayer" parent="bg"]
 scale = Vector2(2, 2)
 motion_scale = Vector2(0.1, 0.01)
 
-[node name="realopera" type="Sprite2D" parent="ParallaxBackground/Opera"]
+[node name="realopera" type="Sprite2D" parent="bg/Opera"]
+unique_name_in_owner = true
 position = Vector2(-17, 120)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("9_kva58")
 
-[node name="realnightopera" type="Sprite2D" parent="ParallaxBackground/Opera"]
+[node name="realnightopera" type="Sprite2D" parent="bg/Opera"]
+unique_name_in_owner = true
 visible = false
 position = Vector2(-17, 120)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("10_gn8l5")
 
-[node name="Sky" type="ParallaxLayer" parent="ParallaxBackground"]
-unique_name_in_owner = true
+[node name="Sky" type="ParallaxLayer" parent="bg"]
 scale = Vector2(2, 2)
 motion_scale = Vector2(0.05, 0.05)
 
-[node name="realsun" type="Sprite2D" parent="ParallaxBackground/Sky"]
+[node name="realsun" type="Sprite2D" parent="bg/Sky"]
+unique_name_in_owner = true
 position = Vector2(174, 58)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("10_f5c0m")
 
-[node name="realmoon" type="Sprite2D" parent="ParallaxBackground/Sky"]
+[node name="realmoon" type="Sprite2D" parent="bg/Sky"]
+unique_name_in_owner = true
 visible = false
 position = Vector2(174, 58)
 scale = Vector2(0.3, 0.3)
