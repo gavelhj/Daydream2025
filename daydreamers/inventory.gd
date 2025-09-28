@@ -16,6 +16,6 @@ func get_items(amount):
 func update_items():
 	pass
 
-func _process(delta: float) -> void: #update inventory HUD
+func _process(_delta: float) -> void: #update inventory HUD
 	for item in items:
 		pass
