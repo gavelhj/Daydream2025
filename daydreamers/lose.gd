@@ -7,7 +7,7 @@ func _ready():
 	canleave = true
 	
 
-func _input(_event: InputEvent) -> void:
+func _unhandled_key_input(_event: InputEvent) -> void:
 	if canleave:
 		Scene.changeTo("res://GameStart.tscn")
 		Game.night = false
