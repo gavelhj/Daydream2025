@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://c167fqi3kbpga" path="res://building1.tscn" id="11_f5c0m"]
 [ext_resource type="Texture2D" uid="uid://b6akq812w7vjn" path="res://moon.png" id="12_6w02q"]
 [ext_resource type="PackedScene" uid="uid://b8lvqax5gk5bt" path="res://building2.tscn" id="12_b2ar6"]
-[ext_resource type="AudioStream" uid="uid://jah5wcvmxtyq" path="res://5747043900981248.wav" id="15_gn8l5"]
+[ext_resource type="AudioStream" uid="uid://jah5wcvmxtyq" path="res://ingame song.wav" id="15_gn8l5"]
 [ext_resource type="Script" uid="uid://qanng4qhnh1w" path="res://audio_stream_player.gd" id="16_6w02q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ee7l0"]

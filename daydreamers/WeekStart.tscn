@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bms8ot6d6jxkb"]
+[gd_scene load_steps=6 format=3 uid="uid://bms8ot6d6jxkb"]
 
 [ext_resource type="Script" uid="uid://b07wwifekqty5" path="res://week_start.gd" id="1_gntp7"]
 [ext_resource type="Texture2D" uid="uid://cmqfibooapand" path="res://clipboard-sprite.png" id="1_ifrde"]
+[ext_resource type="AudioStream" uid="uid://b2touj2xpk7m1" path="res://quota song.wav" id="3_2kfnj"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ifrde"]
 font_size = 40
@@ -160,6 +161,10 @@ offset_top = 296.0
 offset_right = 808.0
 offset_bottom = 351.0
 flat = true
+
+[node name="QuotaSong" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_2kfnj")
+autoplay = true
 
 [connection signal="mouse_entered" from="TextureRect/Shiftbutton" to="." method="_on_shiftbutton_mouse_entered"]
 [connection signal="mouse_exited" from="TextureRect/Shiftbutton" to="." method="_on_shiftbutton_mouse_exited"]
