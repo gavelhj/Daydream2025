@@ -36,7 +36,7 @@ offset_right = 298.0
 offset_bottom = 34.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "press anything to continue"
+text = "press any key to continue"
 label_settings = SubResource("LabelSettings_mexgb")
 horizontal_alignment = 1
 
