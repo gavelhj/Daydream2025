@@ -4,7 +4,7 @@ var itempool = ["rocket",
 "apple", 
 "box", 
 "plank", 
-"spring"]
+"trampoline"]
 
 var items = []
 var itemprices = {
@@ -20,19 +20,6 @@ func get_items(amount):
 		var randnum = randi_range(0, 4)
 		items.append(itempool[randnum])
 
-var theguioffset = 0
-
-func load_items():
-	for item in $HScrollBar.get_children():
-		item.queue_free()
-	var index = 0
-	for item in items:
-		var newitem = Items[item].duplicate()
-		newitem.Position = Vector2(30 + index * 60, 41)
-
-func update_items():
-	theguioffset = $HScrollBar.value * 10
-	pass
 
 func _process(delta: float) -> void: #update inventory HUD
 	pass

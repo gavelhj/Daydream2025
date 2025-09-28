@@ -16,6 +16,8 @@ func lerp_camera(start, end, delta=1):
 func _process(delta):
 	#camlerpend = Vector2(clamp(player.position.x, levelstart, levelend), 0)
 	lerp_camera(camera.offset, player.position, delta * 5)
+	load_items()
+	update_items()
 	
 
 var values = {
@@ -27,7 +29,7 @@ var values = {
 }
 
 func _enter_tree() -> void:
-	print(Inventory.items)
+	load_items()
 	player = $Player
 	camera = $Camera2D
 	player.position = Vector2.ZERO
@@ -51,3 +53,21 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body == %Player:
 		Inventory.items.clear()
 		Game.end_level(false)
+
+var theguioffset = 0
+
+func load_items():
+	for item in $HUD/Inventory/HScrollBar.get_children():
+		item.queue_free()
+	var index = 0
+	for item in Inventory.items:
+		index += 1
+		var newitem = get_node(str(item)).duplicate()
+		var main = get_tree().get_root().get_node("World")
+		newitem.rotation = 0
+		newitem.position = Vector2(30 + index * 60, 41)
+		$HUD/Inventory/HScrollBar.add_child.call_deferred(newitem)
+
+func update_items():
+	theguioffset = $HUD/Inventory/HScrollBar.value * 10
+	$HUD/Inventory/HScrollBar.position = Vector2(-theguioffset, 280)

@@ -21,7 +21,6 @@ func end_level(success):
 	if success:
 		sell_items()
 	daysleft -= 1
-	Inventory.get_items(2 + week)
 	if balance >= quota:
 			Scene.changeTo("res://WeekStart.tscn")
 			week += 1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://b08vl5n2lur0p"]
+[gd_scene load_steps=23 format=3 uid="uid://b08vl5n2lur0p"]
 
 [ext_resource type="PackedScene" uid="uid://bxas3bbhhmtut" path="res://Player.tscn" id="1_c6gwx"]
 [ext_resource type="Script" uid="uid://cf2xv7ebpb05h" path="res://world.gd" id="1_p1v5b"]
@@ -16,6 +16,11 @@
 [ext_resource type="PackedScene" uid="uid://b8lvqax5gk5bt" path="res://building2.tscn" id="12_b2ar6"]
 [ext_resource type="AudioStream" uid="uid://jah5wcvmxtyq" path="res://5747043900981248.wav" id="15_gn8l5"]
 [ext_resource type="Script" path="res://audio_stream_player.gd" id="16_6w02q"]
+[ext_resource type="Texture2D" uid="uid://o26lcopfovsk" path="res://smallewr_box.webp" id="17_0to5b"]
+[ext_resource type="Texture2D" uid="uid://cfe4axj50na7v" path="res://trampoline.webp" id="18_5j71u"]
+[ext_resource type="Texture2D" uid="uid://beubmsnl40bk7" path="res://rocket.webp" id="19_jyqkj"]
+[ext_resource type="Texture2D" uid="uid://b8lpefpk78xij" path="res://plank.webp" id="20_ydbc3"]
+[ext_resource type="Texture2D" uid="uid://buvghihjm7tpd" path="res://apple.png" id="21_aj1ai"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ee7l0"]
 size = Vector2(4762.5, 579)
@@ -121,5 +126,30 @@ color = Color(0.38359725, 0.38359725, 0.38359722, 1)
 stream = ExtResource("15_gn8l5")
 autoplay = true
 script = ExtResource("16_6w02q")
+
+[node name="box" type="Sprite2D" parent="."]
+position = Vector2(27.299988, -370.17004)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("17_0to5b")
+
+[node name="trampoline" type="Sprite2D" parent="."]
+position = Vector2(-97.2, -368.17007)
+scale = Vector2(0.138, 0.2)
+texture = ExtResource("18_5j71u")
+
+[node name="rocket" type="Sprite2D" parent="."]
+position = Vector2(-276.2, -271.17004)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("19_jyqkj")
+
+[node name="plank" type="Sprite2D" parent="."]
+position = Vector2(23.799988, -306.17)
+scale = Vector2(0.09, 0.3)
+texture = ExtResource("20_ydbc3")
+
+[node name="apple" type="Sprite2D" parent="."]
+position = Vector2(412.8, -593.17)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("21_aj1ai")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

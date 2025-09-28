@@ -1,17 +1,3 @@
-[gd_scene load_steps=3 format=3 uid="uid://brp5gaphe6lkq"]
+[gd_scene format=3 uid="uid://brp5gaphe6lkq"]
 
-[ext_resource type="Texture2D" uid="uid://b8lpefpk78xij" path="res://plank.webp" id="1_78om6"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nwt7c"]
-size = Vector2(520, 20)
-
-[node name="Plank" type="StaticBody2D"]
-scale = Vector2(0.5, 0.5)
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_78om6")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 0)
-shape = SubResource("RectangleShape2D_nwt7c")
+[node name="plank" type="StaticBody2D"]
