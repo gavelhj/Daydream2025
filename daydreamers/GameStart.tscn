@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://kgmopbolhcr4"]
+[gd_scene load_steps=7 format=3 uid="uid://kgmopbolhcr4"]
 
 [ext_resource type="Script" uid="uid://scaoxp4cs23u" path="res://game_start.gd" id="1_7hbvu"]
 [ext_resource type="Texture2D" uid="uid://ddevkure8g252" path="res://title.webp" id="2_7hbvu"]
+[ext_resource type="AudioStream" uid="uid://b2hbgkq74p4pd" path="res://clicky.mp3" id="3_a172x"]
 [ext_resource type="AudioStream" uid="uid://bmpn6qfvsu43k" path="res://menu song.wav" id="3_bwt3i"]
 [ext_resource type="Script" uid="uid://n3lqu6rth06t" path="res://button.gd" id="3_nh572"]
 
@@ -53,6 +54,10 @@ text = "play"
 label_settings = SubResource("LabelSettings_bwt3i")
 horizontal_alignment = 1
 
+[node name="Clicky" type="AudioStreamPlayer" parent="Button"]
+stream = ExtResource("3_a172x")
+volume_db = 5.725
+
 [node name="MenuSong" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_bwt3i")
 autoplay = true
@@ -60,3 +65,4 @@ autoplay = true
 [connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="Button" to="." method="_on_button_mouse_exited"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
