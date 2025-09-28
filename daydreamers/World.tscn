@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b08vl5n2lur0p"]
+[gd_scene load_steps=18 format=3 uid="uid://b08vl5n2lur0p"]
 
 [ext_resource type="PackedScene" uid="uid://bxas3bbhhmtut" path="res://Player.tscn" id="1_c6gwx"]
 [ext_resource type="Script" uid="uid://cf2xv7ebpb05h" path="res://world.gd" id="1_p1v5b"]
@@ -14,6 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://c167fqi3kbpga" path="res://building1.tscn" id="11_f5c0m"]
 [ext_resource type="Texture2D" uid="uid://b6akq812w7vjn" path="res://moon.png" id="12_6w02q"]
 [ext_resource type="PackedScene" uid="uid://b8lvqax5gk5bt" path="res://building2.tscn" id="12_b2ar6"]
+[ext_resource type="AudioStream" uid="uid://jah5wcvmxtyq" path="res://5747043900981248.wav" id="15_gn8l5"]
+[ext_resource type="Script" uid="uid://qanng4qhnh1w" path="res://audio_stream_player.gd" id="16_6w02q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ee7l0"]
 size = Vector2(4762.5, 579)
@@ -34,12 +36,12 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("4_wygdx")
 
-[node name="Menu" parent="HUD" instance=ExtResource("3_eu7l1")]
-visible = false
-
 [node name="Inventory" parent="HUD" instance=ExtResource("4_p1v5b")]
 
 [node name="Quota" parent="HUD" instance=ExtResource("5_wygdx")]
+visible = false
+
+[node name="Menu" parent="HUD" instance=ExtResource("3_eu7l1")]
 visible = false
 
 [node name="bg" type="ParallaxBackground" parent="."]
@@ -114,5 +116,10 @@ offset_top = 556.0
 offset_right = 4369.0
 offset_bottom = 1384.0
 color = Color(0.38359725, 0.38359725, 0.38359722, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_gn8l5")
+autoplay = true
+script = ExtResource("16_6w02q")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
