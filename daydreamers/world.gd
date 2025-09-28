@@ -26,11 +26,10 @@ var values = {
 	apple = 100
 }
 
-func _ready():
-	pass
-
-func start_day():
+func _enter_tree() -> void:
 	player.position = Vector2.ZERO
 
-func _enter_tree() -> void:
-	pass
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body == %Player:
+		Scene.changeTo()

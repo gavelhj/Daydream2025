@@ -31,31 +31,31 @@ offset_right = 576.0
 offset_bottom = 362.0
 texture = ExtResource("1_kxp4l")
 
-[node name="Days" type="Label" parent="."]
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 206.0
+offset_top = 20.0
+offset_right = 433.0
+offset_bottom = 75.0
+flat = true
+
+[node name="title" type="Label" parent="Button"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -114.0
-offset_top = -33.0
-offset_right = 113.0
-offset_bottom = 22.0
+offset_left = -113.5
+offset_top = -27.5
+offset_right = 113.5
+offset_bottom = 27.5
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(113.5, 27.5)
-text = "ONA CO."
+text = "play"
 label_settings = SubResource("LabelSettings_bwt3i")
 horizontal_alignment = 1
-
-[node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 206.0
-offset_top = 147.0
-offset_right = 433.0
-offset_bottom = 202.0
-flat = true
 
 [node name="reminder" type="Label" parent="."]
 layout_mode = 1

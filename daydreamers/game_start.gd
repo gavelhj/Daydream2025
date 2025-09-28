@@ -7,8 +7,8 @@ func _on_button_pressed() -> void:
 
 
 func _on_button_mouse_entered() -> void:
-	$Days.scale = Vector2(1.1, 1.1)
+	$Button/title.scale = Vector2(1.1, 1.1)
 
 
 func _on_button_mouse_exited() -> void:
-	$Days.scale = Vector2(1, 1)
+	$Button/title.scale = Vector2(1, 1)

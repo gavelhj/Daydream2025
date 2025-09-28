@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b08vl5n2lur0p"]
+[gd_scene load_steps=16 format=3 uid="uid://b08vl5n2lur0p"]
 
 [ext_resource type="PackedScene" uid="uid://bxas3bbhhmtut" path="res://Player.tscn" id="1_c6gwx"]
 [ext_resource type="Script" uid="uid://cf2xv7ebpb05h" path="res://world.gd" id="1_p1v5b"]
@@ -6,11 +6,17 @@
 [ext_resource type="PackedScene" uid="uid://1gakrrngbltg" path="res://Inventory.tscn" id="4_p1v5b"]
 [ext_resource type="Script" uid="uid://683s6x7ysu0j" path="res://HUD.gd" id="4_wygdx"]
 [ext_resource type="PackedScene" uid="uid://davv6ke1mw3li" path="res://Quota.tscn" id="5_wygdx"]
+[ext_resource type="Texture2D" uid="uid://bp3oyss2w181j" path="res://background-nighttime.png" id="8_ee7l0"]
 [ext_resource type="Texture2D" uid="uid://dpemmutmh2mc" path="res://background1x.webp" id="8_fvag4"]
 [ext_resource type="Texture2D" uid="uid://dpx6psh7roydm" path="res://operahouse1x.webp" id="9_kva58"]
 [ext_resource type="Texture2D" uid="uid://poyjlmbetga3" path="res://sun1x.webp" id="10_f5c0m"]
+[ext_resource type="Texture2D" uid="uid://devgbibggr86m" path="res://operahouse-nighttime.png" id="10_gn8l5"]
 [ext_resource type="PackedScene" uid="uid://c167fqi3kbpga" path="res://building1.tscn" id="11_f5c0m"]
+[ext_resource type="Texture2D" uid="uid://b6akq812w7vjn" path="res://moon.png" id="12_6w02q"]
 [ext_resource type="PackedScene" uid="uid://b8lvqax5gk5bt" path="res://building2.tscn" id="12_b2ar6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ee7l0"]
+size = Vector2(4762.5, 579)
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_p1v5b")
@@ -51,9 +57,10 @@ scale = Vector2(0.3, 0.3)
 texture = ExtResource("8_fvag4")
 
 [node name="realnightcity" type="Sprite2D" parent="ParallaxBackground/City"]
+visible = false
 position = Vector2(92, 33)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("8_fvag4")
+texture = ExtResource("8_ee7l0")
 
 [node name="Opera" type="ParallaxLayer" parent="ParallaxBackground"]
 unique_name_in_owner = true
@@ -69,7 +76,7 @@ texture = ExtResource("9_kva58")
 visible = false
 position = Vector2(-17, 120)
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("9_kva58")
+texture = ExtResource("10_gn8l5")
 
 [node name="Sky" type="ParallaxLayer" parent="ParallaxBackground"]
 unique_name_in_owner = true
@@ -82,12 +89,28 @@ scale = Vector2(0.3, 0.3)
 texture = ExtResource("10_f5c0m")
 
 [node name="realmoon" type="Sprite2D" parent="ParallaxBackground/Sky"]
+visible = false
 position = Vector2(174, 58)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("10_f5c0m")
+texture = ExtResource("12_6w02q")
 
 [node name="build1" parent="." instance=ExtResource("11_f5c0m")]
 position = Vector2(25, 312)
 
 [node name="build2" parent="." instance=ExtResource("12_b2ar6")]
 position = Vector2(886, 312)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1328, 854)
+shape = SubResource("RectangleShape2D_ee7l0")
+
+[node name="ColorRect" type="ColorRect" parent="Area2D"]
+offset_left = -2581.0
+offset_top = 556.0
+offset_right = 4369.0
+offset_bottom = 1384.0
+color = Color(0.38359725, 0.38359725, 0.38359722, 1)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

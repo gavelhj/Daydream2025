@@ -3,6 +3,7 @@ extends Node
 @onready var balance = 0
 @onready var quota = 700
 @onready var daysleft = 5
+@onready var night = false
 
 func sell_items():
 	for price in Inventory.items:
@@ -35,10 +36,10 @@ func begin_level(time): #day or night
 
 func end_level():
 	sell_items()
-	var night = night_check()
+	night = night_check()
 	if daysleft == 0:
 		if night:
-			Scene.changeTo("res://Quota.tscn")
+			Scene.changeTo("res://WeekStart.tscn")
 		else:
 			if balance >= quota:
 				Scene.changeTo("res://WeekStart.tscn")
