@@ -1,8 +1,7 @@
-[gd_scene load_steps=24 format=3 uid="uid://b08vl5n2lur0p"]
+[gd_scene load_steps=23 format=3 uid="uid://b08vl5n2lur0p"]
 
 [ext_resource type="PackedScene" uid="uid://bxas3bbhhmtut" path="res://Player.tscn" id="1_c6gwx"]
 [ext_resource type="Script" uid="uid://cf2xv7ebpb05h" path="res://world.gd" id="1_p1v5b"]
-[ext_resource type="AudioStream" uid="uid://bqdl1iyhiq8cu" path="res://jump sound.mp3" id="3_5j71u"]
 [ext_resource type="PackedScene" uid="uid://xshtpqckuidd" path="res://Menu.tscn" id="3_eu7l1"]
 [ext_resource type="PackedScene" uid="uid://1gakrrngbltg" path="res://Inventory.tscn" id="4_p1v5b"]
 [ext_resource type="Script" uid="uid://683s6x7ysu0j" path="res://HUD.gd" id="4_wygdx"]
@@ -32,9 +31,6 @@ script = ExtResource("1_p1v5b")
 [node name="Player" parent="." instance=ExtResource("1_c6gwx")]
 unique_name_in_owner = true
 texture_filter = 1
-
-[node name="jumpsound" type="AudioStreamPlayer" parent="Player"]
-stream = ExtResource("3_5j71u")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
