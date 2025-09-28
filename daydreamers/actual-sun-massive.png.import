@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmvjj7xyriab5"
-path="res://.godot/imported/actual-background-massive.png-c4e071d806cbeb6422d52f4e794b92c4.ctex"
+uid="uid://dgt5oh8v1h3si"
+path="res://.godot/imported/actual-sun-massive.png-747ede64a29f4e4b519f0e15e1a6a2d7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://actual-background-massive.png"
-dest_files=["res://.godot/imported/actual-background-massive.png-c4e071d806cbeb6422d52f4e794b92c4.ctex"]
+source_file="res://actual-sun-massive.png"
+dest_files=["res://.godot/imported/actual-sun-massive.png-747ede64a29f4e4b519f0e15e1a6a2d7.ctex"]
 
 [params]
 
