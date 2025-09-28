@@ -30,13 +30,13 @@ func _enter_tree() -> void:
 	player = $Player
 	camera = $Camera2D
 	player.position = Vector2.ZERO
-	if Game.night_check():
-		$bg/City/realdaycity.visible = false
-		$bg/City/realnightcity.visible = true
-		$bg/Opera/realopera.visible = false
-		$bg/Opera/realnightopera.visible = true
-		$bg/Sky/realsun.visible = false
-		$bg/Sky/realmoon.visible = true
+	if Game.night_check() == 1:
+		$bg/City/realdaycity.visible = true
+		$bg/City/realnightcity.visible = false
+		$bg/Opera/realopera.visible = true
+		$bg/Opera/realnightopera.visible = false
+		$bg/Sky/realsun.visible = true
+		$bg/Sky/realmoon.visible = false
 	else:
 		$bg/City/realdaycity.visible = false
 		$bg/City/realnightcity.visible = true

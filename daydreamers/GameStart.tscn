@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://kgmopbolhcr4"]
 
 [ext_resource type="Script" uid="uid://scaoxp4cs23u" path="res://game_start.gd" id="1_7hbvu"]
-[ext_resource type="Texture2D" uid="uid://nywe7smuuak6" path="res://box.png" id="1_kxp4l"]
+[ext_resource type="Texture2D" uid="uid://ddevkure8g252" path="res://title.webp" id="2_7hbvu"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_bwt3i"]
 font_size = 40
@@ -25,18 +25,17 @@ script = ExtResource("1_7hbvu")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 64.0
-offset_top = -2.0
-offset_right = 576.0
-offset_bottom = 362.0
-texture = ExtResource("1_kxp4l")
+offset_right = 1280.0
+offset_bottom = 720.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_7hbvu")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
 offset_left = 206.0
-offset_top = 20.0
+offset_top = 40.0
 offset_right = 433.0
-offset_bottom = 75.0
+offset_bottom = 95.0
 flat = true
 
 [node name="title" type="Label" parent="Button"]
@@ -65,9 +64,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -207.0
-offset_top = 20.0
+offset_top = 80.0
 offset_right = 207.0
-offset_bottom = 113.0
+offset_bottom = 173.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "click the title to play"

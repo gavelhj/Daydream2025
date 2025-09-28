@@ -14,6 +14,7 @@ func _enter_tree() -> void:
 
 func _on_shiftbutton_pressed() -> void:
 	Scene.changeTo("res://World.tscn")
+	Game.quota = 700 + 200 * Game.week
 
 
 func _on_shiftbutton_mouse_entered() -> void:

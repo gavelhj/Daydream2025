@@ -13,22 +13,23 @@ func sell_items():
 	Inventory.items.clear()
 
 func night_check():
-	if daysleft == 0 and balance < quota:
-		return true
+	if daysleft <= 0 and balance < quota:
+		return 0 #night
 	else:
-		return false
+		return 1 #day
 
 func end_level(success):
 	if success:
 		sell_items()
 	daysleft -= 1
-	night = night_check()
+	Inventory.get_items(2 + week)
 	if balance >= quota:
 			Scene.changeTo("res://WeekStart.tscn")
 			week += 1
-	if daysleft == 0:
-		if balance < quota:
-			Scene.changeTo("res://lose.tscn")
-
-func game_loop_start():
-	pass
+			balance = 0
+			quota =  700 + 200 * week
+	if night_check() == 1:
+		Scene.changeTo("res://lose.tscn")
+	elif night == false:
+		night = true
+		Scene.changeTo("res://WeekStart.tscn")

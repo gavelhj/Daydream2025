@@ -10,3 +10,7 @@ func _ready():
 func _input(event: InputEvent) -> void:
 	if canleave:
 		Scene.changeTo("res://GameStart")
+		Game.night = false
+		Game.week = 1
+		Game.daysleft = 5
+		Game.balance = 0
