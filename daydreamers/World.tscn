@@ -107,7 +107,7 @@ texture = ExtResource("12_6w02q")
 position = Vector2(25, 312)
 
 [node name="build2" parent="." instance=ExtResource("12_b2ar6")]
-position = Vector2(886, 312)
+position = Vector2(437, 295)
 
 [node name="Area2D" type="Area2D" parent="."]
 
