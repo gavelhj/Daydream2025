@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 @onready var animplayer = $AnimationPlayer
 @onready var sprite = $Sprite2D
+@onready var jumpsound = $jumpsound
 
 var speed = 100
 var jumpheight = 100
