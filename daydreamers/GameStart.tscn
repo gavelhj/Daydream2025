@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://kgmopbolhcr4"]
+[gd_scene load_steps=4 format=3 uid="uid://kgmopbolhcr4"]
 
 [ext_resource type="Script" uid="uid://scaoxp4cs23u" path="res://game_start.gd" id="1_7hbvu"]
 [ext_resource type="Texture2D" uid="uid://ddevkure8g252" path="res://title.webp" id="2_7hbvu"]
@@ -6,12 +6,6 @@
 [sub_resource type="LabelSettings" id="LabelSettings_bwt3i"]
 font_size = 40
 outline_size = 10
-outline_color = Color(0.84705883, 0.7058824, 0.75686276, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_a172x"]
-font_size = 20
-font_color = Color(0.7058824, 0.75686276, 0.84705883, 1)
-outline_size = 2
 outline_color = Color(0.84705883, 0.7058824, 0.75686276, 1)
 
 [node name="GameStart" type="Control"]
@@ -33,44 +27,28 @@ texture = ExtResource("2_7hbvu")
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
 offset_left = 206.0
-offset_top = 40.0
+offset_top = 46.0
 offset_right = 433.0
-offset_bottom = 95.0
+offset_bottom = 101.0
 flat = true
+metadata/_edit_group_ = true
 
 [node name="title" type="Label" parent="Button"]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 0.60700005
 anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_bottom = 0.60700005
 offset_left = -113.5
-offset_top = -27.5
+offset_top = -33.385002
 offset_right = 113.5
-offset_bottom = 27.5
+offset_bottom = 21.614998
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(113.5, 27.5)
 text = "play"
 label_settings = SubResource("LabelSettings_bwt3i")
-horizontal_alignment = 1
-
-[node name="reminder" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -207.0
-offset_top = 80.0
-offset_right = 207.0
-offset_bottom = 173.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "click the title to play"
-label_settings = SubResource("LabelSettings_a172x")
 horizontal_alignment = 1
 
 [connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
