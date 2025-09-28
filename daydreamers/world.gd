@@ -32,4 +32,4 @@ func _enter_tree() -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body == %Player:
-		Scene.changeTo()
+		Scene.changeTo("res://Lose.tscn")

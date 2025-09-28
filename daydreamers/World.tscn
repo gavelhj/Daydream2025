@@ -38,7 +38,6 @@ script = ExtResource("4_wygdx")
 visible = false
 
 [node name="Inventory" parent="HUD" instance=ExtResource("4_p1v5b")]
-visible = false
 
 [node name="Quota" parent="HUD" instance=ExtResource("5_wygdx")]
 visible = false

@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://hsxlghtv3sn6"]
+[gd_scene load_steps=3 format=3 uid="uid://hsxlghtv3sn6"]
 
 [ext_resource type="Script" uid="uid://c4foxvakwecw1" path="res://lose.gd" id="1_mexgb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mexgb"]
+font_size = 20
+outline_size = 10
+outline_color = Color(0.84705883, 0.7058824, 0.75686276, 1)
 
 [node name="Lose" type="Control"]
 layout_mode = 3
@@ -11,18 +16,59 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_mexgb")
 
-[node name="Label" type="Label" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = 183.0
-offset_top = 146.0
-offset_right = 412.0
-offset_bottom = 200.0
-text = "You lose (this is the end screen)"
+offset_right = 914.0
+offset_bottom = 448.0
+color = Color(0.7058824, 0.75686276, 0.84705883, 1)
 
-[node name="Label2" type="Label" parent="."]
-layout_mode = 0
-offset_left = 166.0
-offset_top = 191.0
-offset_right = 440.0
-offset_bottom = 245.0
-text = "press any button to return to menu"
+[node name="message2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -311.0
+offset_top = -21.0
+offset_right = 298.0
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "press anything to continue"
+label_settings = SubResource("LabelSettings_mexgb")
+horizontal_alignment = 1
+
+[node name="message" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -359.0
+offset_top = -91.0
+offset_right = 250.0
+offset_bottom = -36.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "You lose (this is the end screen)"
+label_settings = SubResource("LabelSettings_mexgb")
+horizontal_alignment = 1
+
+[node name="message3" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -321.0
+offset_top = 20.0
+offset_right = 288.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "total weeks survived"
+label_settings = SubResource("LabelSettings_mexgb")
+horizontal_alignment = 1

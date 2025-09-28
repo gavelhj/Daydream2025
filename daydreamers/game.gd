@@ -6,8 +6,9 @@ extends Node
 @onready var night = false
 
 func sell_items():
-	for price in Inventory.items:
-		Global.money += price
+	for item in Inventory.items:
+		#Global.money += price
+		pass
 	Inventory.items.clear()
 
 func night_check():

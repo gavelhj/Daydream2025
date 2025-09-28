@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5lr2y2hm31e"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4vqr3"]
+font_size = 40
+outline_size = 10
+outline_color = Color(0.84705883, 0.7058824, 0.75686276, 1)
+
+[node name="Controls" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 914.0
+offset_bottom = 448.0
+color = Color(0.7058824, 0.75686276, 0.84705883, 1)
+
+[node name="Days" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -226.0
+offset_top = -142.0
+offset_right = 208.0
+offset_bottom = 145.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "controls:
+wd to move
+space to jump
+escape for menu
+hold tab to view quota"
+label_settings = SubResource("LabelSettings_4vqr3")
+horizontal_alignment = 1
