@@ -3,7 +3,7 @@ extends Control
 
 func _ready():
 	$message3.text = "total weeks survived " + str(Game.week)
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(1).timeout
 	canleave = true
 	
 

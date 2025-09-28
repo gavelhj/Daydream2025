@@ -27,6 +27,7 @@ var values = {
 }
 
 func _enter_tree() -> void:
+	print(Inventory.items)
 	player = $Player
 	camera = $Camera2D
 	player.position = Vector2.ZERO
@@ -48,4 +49,5 @@ func _enter_tree() -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body == %Player:
+		Inventory.items.clear()
 		Game.end_level(false)
