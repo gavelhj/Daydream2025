@@ -135,3 +135,32 @@ grow_vertical = 2
 text = "placeholder"
 label_settings = SubResource("LabelSettings_ifrde")
 horizontal_alignment = 1
+
+[node name="Shift" type="Label" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 324.0
+offset_top = -43.0
+offset_right = 552.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Begin Shift"
+label_settings = SubResource("LabelSettings_ifrde")
+horizontal_alignment = 1
+
+[node name="Shiftbutton" type="Button" parent="TextureRect"]
+layout_mode = 0
+offset_left = 580.0
+offset_top = 296.0
+offset_right = 808.0
+offset_bottom = 351.0
+flat = true
+
+[connection signal="mouse_entered" from="TextureRect/Shiftbutton" to="." method="_on_shiftbutton_mouse_entered"]
+[connection signal="mouse_exited" from="TextureRect/Shiftbutton" to="." method="_on_shiftbutton_mouse_exited"]
+[connection signal="pressed" from="TextureRect/Shiftbutton" to="." method="_on_shiftbutton_pressed"]

@@ -10,3 +10,15 @@ func _enter_tree() -> void:
 	$TextureRect/Days.text = str(Game.daysleft)
 	$TextureRect/Balance.text = "$" + str(Game.balance)
 	$TextureRect/Quota.text = "$" + str(Game.quota)
+
+
+func _on_shiftbutton_pressed() -> void:
+	Scene.changeTo("res://World.tscn")
+
+
+func _on_shiftbutton_mouse_entered() -> void:
+	$TextureRect/Shift.scale = Vector2(1.1, 1.1)
+
+
+func _on_shiftbutton_mouse_exited() -> void:
+	$TextureRect/Shift.scale = Vector2(1.0, 1.0)

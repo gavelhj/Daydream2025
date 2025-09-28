@@ -27,7 +27,6 @@ var values = {
 }
 
 func _ready():
-	Scene.changeTo("res://WeekStart.tscn")
 	pass
 
 func start_day():

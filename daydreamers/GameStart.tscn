@@ -1,6 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://kgmopbolhcr4"]
+[gd_scene load_steps=5 format=3 uid="uid://kgmopbolhcr4"]
 
+[ext_resource type="Script" uid="uid://scaoxp4cs23u" path="res://game_start.gd" id="1_7hbvu"]
 [ext_resource type="Texture2D" uid="uid://nywe7smuuak6" path="res://box.png" id="1_kxp4l"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bwt3i"]
+font_size = 40
+outline_size = 10
+outline_color = Color(0.84705883, 0.7058824, 0.75686276, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_a172x"]
+font_size = 20
+font_color = Color(0.7058824, 0.75686276, 0.84705883, 1)
+outline_size = 2
+outline_color = Color(0.84705883, 0.7058824, 0.75686276, 1)
 
 [node name="GameStart" type="Control"]
 layout_mode = 3
@@ -9,6 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_7hbvu")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
@@ -17,3 +30,50 @@ offset_top = -2.0
 offset_right = 576.0
 offset_bottom = 362.0
 texture = ExtResource("1_kxp4l")
+
+[node name="Days" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -114.0
+offset_top = -33.0
+offset_right = 113.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(113.5, 27.5)
+text = "ONA CO."
+label_settings = SubResource("LabelSettings_bwt3i")
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 206.0
+offset_top = 147.0
+offset_right = 433.0
+offset_bottom = 202.0
+flat = true
+
+[node name="reminder" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -207.0
+offset_top = 20.0
+offset_right = 207.0
+offset_bottom = 113.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "click the title to play"
+label_settings = SubResource("LabelSettings_a172x")
+horizontal_alignment = 1
+
+[connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Button" to="." method="_on_button_mouse_exited"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
