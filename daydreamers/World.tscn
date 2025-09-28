@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://1gakrrngbltg" path="res://Inventory.tscn" id="4_p1v5b"]
 [ext_resource type="Script" uid="uid://683s6x7ysu0j" path="res://HUD.gd" id="4_wygdx"]
 [ext_resource type="PackedScene" uid="uid://davv6ke1mw3li" path="res://Quota.tscn" id="5_wygdx"]
-[ext_resource type="Texture2D" uid="uid://bp3oyss2w181j" path="res://background-nighttime.png" id="8_ee7l0"]
+[ext_resource type="Texture2D" uid="uid://b88fx5tcegdl1" path="res://bg night.png" id="8_0to5b"]
 [ext_resource type="Texture2D" uid="uid://dpemmutmh2mc" path="res://background1x.webp" id="8_fvag4"]
 [ext_resource type="Texture2D" uid="uid://dpx6psh7roydm" path="res://operahouse1x.webp" id="9_kva58"]
 [ext_resource type="Texture2D" uid="uid://devgbibggr86m" path="res://operahouse-nighttime.png" id="10_gn8l5"]
@@ -63,11 +63,9 @@ scale = Vector2(0.3, 0.3)
 texture = ExtResource("8_fvag4")
 
 [node name="realnightcity" type="Sprite2D" parent="bg/City"]
-unique_name_in_owner = true
-visible = false
-position = Vector2(92, 33)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("8_ee7l0")
+position = Vector2(91.499985, 32.49999)
+scale = Vector2(0.3002856, 0.29931036)
+texture = ExtResource("8_0to5b")
 
 [node name="Opera" type="ParallaxLayer" parent="bg"]
 scale = Vector2(2, 2)
