@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmvjj7xyriab5"
-path="res://.godot/imported/actual-background-massive.png-c4e071d806cbeb6422d52f4e794b92c4.ctex"
+uid="uid://dpemmutmh2mc"
+path="res://.godot/imported/background1x.webp-1678a5aa1ec9d1c6aa2f8272ec4efee1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://actual-background-massive.png"
-dest_files=["res://.godot/imported/actual-background-massive.png-c4e071d806cbeb6422d52f4e794b92c4.ctex"]
+source_file="res://background1x.webp"
+dest_files=["res://.godot/imported/background1x.webp-1678a5aa1ec9d1c6aa2f8272ec4efee1.ctex"]
 
 [params]
 

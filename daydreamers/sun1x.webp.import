@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlkuavf8ftnye"
-path="res://.godot/imported/actual-operahouse-massive.png-b11ec011f3b1f0b2ee10b40981b728fb.ctex"
+uid="uid://poyjlmbetga3"
+path="res://.godot/imported/sun1x.webp-bcef16654a6d5751efd66be243016900.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://actual-operahouse-massive.png"
-dest_files=["res://.godot/imported/actual-operahouse-massive.png-b11ec011f3b1f0b2ee10b40981b728fb.ctex"]
+source_file="res://sun1x.webp"
+dest_files=["res://.godot/imported/sun1x.webp-bcef16654a6d5751efd66be243016900.ctex"]
 
 [params]
 

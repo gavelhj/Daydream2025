@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b08vl5n2lur0p"]
+[gd_scene load_steps=14 format=3 uid="uid://b08vl5n2lur0p"]
 
 [ext_resource type="PackedScene" uid="uid://bxas3bbhhmtut" path="res://Player.tscn" id="1_c6gwx"]
 [ext_resource type="Script" uid="uid://cf2xv7ebpb05h" path="res://world.gd" id="1_p1v5b"]
@@ -8,7 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://1gakrrngbltg" path="res://Inventory.tscn" id="4_p1v5b"]
 [ext_resource type="Script" uid="uid://683s6x7ysu0j" path="res://HUD.gd" id="4_wygdx"]
 [ext_resource type="PackedScene" uid="uid://davv6ke1mw3li" path="res://Quota.tscn" id="5_wygdx"]
-[ext_resource type="Texture2D" uid="uid://dwq64rwmyekx0" path="res://actual-background-massive.png" id="9_kva58"]
+[ext_resource type="Texture2D" uid="uid://dlkuavf8ftnye" path="res://actual-operahouse-massive.png" id="8_fvag4"]
+[ext_resource type="Texture2D" uid="uid://cmvjj7xyriab5" path="res://actual-background-massive.png" id="9_kva58"]
+[ext_resource type="Texture2D" uid="uid://dgt5oh8v1h3si" path="res://actual-sun-massive.png" id="10_f5c0m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2dftf"]
 texture = ExtResource("2_2dftf")
@@ -55,19 +57,19 @@ visible = false
 [node name="realcity" type="Sprite2D" parent="ParallaxBackground/City"]
 position = Vector2(-26, 1)
 scale = Vector2(1.2, 1.2)
+texture = ExtResource("9_kva58")
 
 [node name="Opera" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="realopera" type="Sprite2D" parent="ParallaxBackground/Opera"]
 position = Vector2(-51, 25)
 scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_fvag4")
 
 [node name="Sun" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.01, 0.01)
 
 [node name="realsun" type="Sprite2D" parent="ParallaxBackground/Sun"]
 position = Vector2(11, -6)
 scale = Vector2(1.5, 1.5)
-
-[node name="ActualBackgroundMassive" type="Sprite2D" parent="."]
-position = Vector2(19, 19)
-texture = ExtResource("9_kva58")
+texture = ExtResource("10_f5c0m")
