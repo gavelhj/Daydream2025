@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://kgmopbolhcr4"]
+[gd_scene load_steps=6 format=3 uid="uid://kgmopbolhcr4"]
 
 [ext_resource type="Script" uid="uid://scaoxp4cs23u" path="res://game_start.gd" id="1_7hbvu"]
 [ext_resource type="Texture2D" uid="uid://ddevkure8g252" path="res://title.webp" id="2_7hbvu"]
 [ext_resource type="AudioStream" uid="uid://bmpn6qfvsu43k" path="res://menu song.wav" id="3_bwt3i"]
+[ext_resource type="Script" uid="uid://n3lqu6rth06t" path="res://button.gd" id="3_nh572"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_bwt3i"]
 font_size = 40
@@ -32,7 +33,7 @@ offset_top = 46.0
 offset_right = 433.0
 offset_bottom = 101.0
 flat = true
-metadata/_edit_group_ = true
+script = ExtResource("3_nh572")
 
 [node name="title" type="Label" parent="Button"]
 layout_mode = 1
