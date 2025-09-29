@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b07wwifekqty5" path="res://week_start.gd" id="1_gntp7"]
 [ext_resource type="Texture2D" uid="uid://cmqfibooapand" path="res://clipboard-sprite.png" id="1_ifrde"]
-[ext_resource type="AudioStream" uid="uid://b2touj2xpk7m1" path="res://controls song.wav" id="3_2kfnj"]
+[ext_resource type="AudioStream" uid="uid://thyvp51qqb1t" path="res://more music.wav" id="3_2kfnj"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ifrde"]
 font_size = 40

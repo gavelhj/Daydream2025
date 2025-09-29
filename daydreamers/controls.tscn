@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://c5lr2y2hm31e"]
+[gd_scene load_steps=4 format=3 uid="uid://crt0uptpxmxrd"]
 
-[ext_resource type="Script" uid="uid://uk428lc7q6gb" path="res://controls.gd" id="1_gpdjo"]
+[ext_resource type="Script" path="res://controls.gd" id="1_gpdjo"]
+[ext_resource type="AudioStream" uid="uid://b2touj2xpk7m1" path="res://controls song.wav" id="2_qo8cm"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4vqr3"]
 font_size = 20
@@ -60,3 +61,7 @@ grow_vertical = 2
 text = "press any key to return to menu"
 label_settings = SubResource("LabelSettings_4vqr3")
 horizontal_alignment = 1
+
+[node name="controls song" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_qo8cm")
+autoplay = true
