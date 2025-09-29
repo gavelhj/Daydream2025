@@ -9,8 +9,10 @@ size = Vector2(30, 22)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bqn3j"]
 
 [node name="box" type="StaticBody2D"]
+z_index = 2
 script = ExtResource("1_oq5cr")
 metadata/_edit_group_ = true
+metadata/Candrag = true
 
 [node name="box" type="Sprite2D" parent="."]
 scale = Vector2(0.3, 0.3)
@@ -18,8 +20,12 @@ texture = ExtResource("1_g2tbl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_n00cy")
+disabled = true
 
 [node name="area" type="Area2D" parent="."]
 
 [node name="clickbox" type="CollisionShape2D" parent="area"]
 shape = SubResource("RectangleShape2D_bqn3j")
+
+[connection signal="mouse_entered" from="area" to="." method="_on_area_mouse_entered"]
+[connection signal="mouse_exited" from="area" to="." method="_on_area_mouse_exited"]

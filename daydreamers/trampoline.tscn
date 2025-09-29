@@ -10,13 +10,16 @@ size = Vector2(74, 11)
 size = Vector2(48, 21)
 
 [node name="trampoline" type="StaticBody2D"]
+z_index = 2
 script = ExtResource("1_cilbb")
+metadata/candrag = true
 
 [node name="trampoline" type="Sprite2D" parent="."]
 scale = Vector2(0.138, 0.2)
 texture = ExtResource("2_iocah")
 
 [node name="Area2D" type="Area2D" parent="."]
+monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -10.5)
@@ -30,3 +33,5 @@ shape = SubResource("RectangleShape2D_cilbb")
 metadata/_edit_group_ = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="mouse_entered" from="area" to="." method="_on_area_mouse_entered"]
+[connection signal="mouse_exited" from="area" to="." method="_on_area_mouse_exited"]

@@ -53,7 +53,7 @@ func apply_friction(direction, delta):
 	if absf(velocity.x) < 10:
 		velocity.x = 0
 
-func handle_inputs(delta):
+func handle_inputs(_delta):
 	var direction = Input.get_axis("ui_left", "ui_right")
 	
 	if direction: #if press a then return -1 and d is 1 and both is 0

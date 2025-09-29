@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://5j1gqwuvw0ma" path="res://building_2-tall.png" id="1_hag65"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hag65"]
-size = Vector2(206, 72)
+size = Vector2(69, 72)
 
 [node name="build2" type="StaticBody2D"]
 script = ExtResource("1_d2lkj")
@@ -19,7 +19,23 @@ polygon = PackedVector2Array(-95, 286, -94, -269, -95, -270, -96, -274, -98, -27
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -303)
+position = Vector2(68.5, -303)
 shape = SubResource("RectangleShape2D_hag65")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 51.0
+offset_top = -326.0
+offset_right = 56.0
+offset_bottom = -286.0
+color = Color(0.36471137, 0.3647114, 0.3647114, 1)
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 1.0
+offset_right = 35.0
+offset_bottom = 17.0
+color = Color(0.8566987, 0.67057437, 0.5524668, 1)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

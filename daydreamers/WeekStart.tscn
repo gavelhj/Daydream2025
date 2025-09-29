@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bms8ot6d6jxkb"]
+[gd_scene load_steps=7 format=3 uid="uid://bms8ot6d6jxkb"]
 
 [ext_resource type="Script" uid="uid://b07wwifekqty5" path="res://week_start.gd" id="1_gntp7"]
 [ext_resource type="Texture2D" uid="uid://cmqfibooapand" path="res://clipboard-sprite.png" id="1_ifrde"]
@@ -13,6 +13,11 @@ outline_color = Color(0.84705883, 0.7058824, 0.75686276, 1)
 font_size = 32
 font_color = Color(0.7058824, 0.75686276, 0.84705883, 1)
 outline_size = 2
+outline_color = Color(0.84705883, 0.7058824, 0.75686276, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2kfnj"]
+font_size = 20
+outline_size = 5
 outline_color = Color(0.84705883, 0.7058824, 0.75686276, 1)
 
 [node name="WeekStart" type="Control"]
@@ -165,6 +170,24 @@ flat = true
 [node name="QuotaSong" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_2kfnj")
 autoplay = true
+
+[node name="week" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.60700005
+anchor_right = 0.5
+anchor_bottom = 0.60700005
+offset_left = -344.0
+offset_top = -58.52002
+offset_right = -117.0
+offset_bottom = -3.5200195
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(113.5, 27.5)
+text = "New Week!"
+label_settings = SubResource("LabelSettings_2kfnj")
+horizontal_alignment = 1
 
 [connection signal="mouse_entered" from="TextureRect/Shiftbutton" to="." method="_on_shiftbutton_mouse_entered"]
 [connection signal="mouse_exited" from="TextureRect/Shiftbutton" to="." method="_on_shiftbutton_mouse_exited"]

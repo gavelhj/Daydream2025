@@ -6,7 +6,14 @@ extends Control
 @onready var balance = $TextureRect/Balance
 @onready var quota = $TextureRect/Quota
 
+static var week = 0
+
 func _enter_tree() -> void:
+	if week != Game.week:
+		$week.visible = true
+		week = Game.week
+	else:
+		$week.visible = false
 	$TextureRect/Days.text = str(Game.daysleft)
 	$TextureRect/Balance.text = "$" + str(Game.balance)
 	$TextureRect/Quota.text = "$" + str(Game.quota)

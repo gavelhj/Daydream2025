@@ -1,7 +1,7 @@
 extends CanvasLayer
 #we didnt finish in time so here is the old item pool
-#var itempool = ["rocket", "apple", "box", "plank", "trampoline"]
-var itempool = ["apple","apple","apple","apple","apple"]
+var itempool = ["rocket", "apple", "box", "plank", "trampoline"]
+#var itempool = ["apple","apple","apple","apple","apple"]
 
 var items = []
 var itemprices = {

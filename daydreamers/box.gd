@@ -1,27 +1,30 @@
 extends StaticBody2D
 
-var isdraggable = true
 var dragging = false
 var candrag = false
 var waspressing = true
 
-func _process(delta:float)->void:
-	var mousepos = get_viewport().get_mouse_position()
-	var globalmousepos = get_global_mouse_position()
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-		if candrag == true and isdraggable == true:
-			position = mousepos
-			dragging = true
-	if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-		if dragging == true:
-			position = globalmousepos
-			isdraggable = false
-		dragging = false
+func _process(_delta:float)->void:
+	if candrag == true:
+		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+				position = get_global_mouse_position()
+				dragging = true
+	if dragging == true: #let go of the box
+		if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+			set_meta('Candrag', false)
+			position = get_global_mouse_position()
+			$CollisionShape2D.disabled = false
+			$area/clickbox.disabled = true
+			candrag = false
+			dragging = false
+			if get_parent().name == "Inventory":
+				Inventory.items.erase("box")
 
 
 func _on_area_mouse_entered() -> void:
-	candrag = true
-	print("aa")
+	if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		candrag = true
 
 func _on_area_mouse_exited() -> void:
-	candrag = false
+	if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		candrag = false

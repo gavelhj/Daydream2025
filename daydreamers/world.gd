@@ -13,11 +13,14 @@ func lerp_camera(start, end, delta=1):
 	camera.offset.x = lerp(start.x, end.x, delta)
 	camera.offset.y = lerp(start.y, end.y, delta)
 
+var loadeditems = []
 func _process(delta):
 	#camlerpend = Vector2(clamp(player.position.x, levelstart, levelend), 0)
 	lerp_camera(camera.offset, player.position, delta * 5)
-	load_items()
+	if loadeditems != Inventory.items:
+		load_items()
 	update_items()
+	loadeditems = Inventory.items.duplicate()
 
 var values = {
 	rocket = 200,
@@ -49,6 +52,11 @@ func _enter_tree() -> void:
 		$bg/Sky/realmoon.visible = true
 
 
+func _unhandled_key_input(event: InputEvent) -> void:
+	if event.is_action_pressed("reset"):
+		Inventory.items.clear()
+		Game.end_level(false)
+
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body == %Player:
 		Inventory.items.clear()
@@ -57,20 +65,23 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 var theguioffset = 0
 
 func load_items():
+	#make the items not respawn every frame for it to work
 	for item in $Inventory.get_children():
-		item.queue_free()
+		if item.get_meta('Candrag') == false:
+			$Inventory.remove_child(item)
+			add_child.call_deferred(item)
+		else:
+			item.queue_free()
 	var index = 0
 	for item in Inventory.items:
 		index += 1
 		var newitem = get_node(str(item)).duplicate()
 		newitem.rotation = 0
-		newitem.position = Vector2(30 + index * 60, 41)
 		$Inventory.add_child.call_deferred(newitem)
 
 func update_items():
 	theguioffset = $HUD/Inventory/HScrollBar.value * 3
-	$Inventory.position = camera.offset + Vector2(-350, 100)
 	var index = 0
 	for item in $Inventory.get_children():
 		index += 1
-		item.position = camera.offset + Vector2(-300 + index * 60 + theguioffset, 151)
+		item.position = camera.offset + Vector2(300 - index * 60 + theguioffset, 151)

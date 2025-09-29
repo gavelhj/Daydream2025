@@ -1,5 +1,5 @@
 extends AudioStreamPlayer
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if playing != Global.music:
 		playing = Global.music
